@@ -13,8 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () {return view('livewire/home');});
+
+Route::post('/whatssAppWebHoo', function (Request $request) {
+    MyFunctions::loguear('a+', '../storage/logs/entidades.txt', MyFunctions::iterator($request->all()), false);
+    //$toSend = new TestWhats($request);
+    //Mail::to('migvicpereyra@hotmail.com')->queue($toSend);
+    MyFunctions::loguear('a', '../storage/logs/whatsresponse.txt', 'contacto');
+    //dd($request->all());
+    return response('', 200);
 });
 
 Route::get('/dashboard', function () {

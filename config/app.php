@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('APP_TIMEZONE', 'UTC'),//'America/Argentina/Buenos_Aires',
 
     /*
     |--------------------------------------------------------------------------
